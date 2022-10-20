@@ -28,9 +28,10 @@ To get a local copy up and running, follow these simple steps:
 - Web browser
 
 ### Setup
-
-- git clone git@github.com:KaskMIL/book-a-jet-backend.git
-- cd book-a-jet-backend
+```
+git clone git@github.com:KaskMIL/book-a-jet-backend.git
+cd book-a-jet-backend
+```
 
 ### Install
 
@@ -39,10 +40,6 @@ Run `bundle install`
 ### Usage
 
 Execute command `rails server`
-
-# We need to update the server information 
-
-Then browse http://[::1]:3000/api/v1/greeting
 
 ## Authors
 
