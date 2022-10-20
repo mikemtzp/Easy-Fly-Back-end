@@ -1,25 +1,22 @@
 (https://img.shields.io/badge/Microverse-blueviolet)
 
-# Book-a-Jet-Back-End
+# Book a Jet Back-End
 
-> This repo contains all the files and configuration necesary to run the Back-End need it for [Book-a-Jet-Front-End](https://github.com/KaskMIL/book-a-jet-front-end).
+> In the Book a Jet app you can reserve a jet in a specific range of date, see the details from a jet model, see or cancelyour reservations, and add or delete a new jet to be available for reservation. This repo manages all the necessary to run the API needed for the project [Book-a-Jet-Front-End](https://github.com/KaskMIL/book-a-jet-front-end).
 
 ## Built With
 
 - Ruby on Rails
-- Postgresql
+- PostgreSQL
 
 ## React Front-End
-
 - [Book-a-Jet-Front-End](https://github.com/KaskMIL/book-a-jet-front-end)
-
 
 ## Live Demo (coming soon...)
 
-
 ## Getting Started
 
-To get a local copy up and running, fallow these simple steps:
+To get a local copy up and running, follow these simple steps:
 
 ### Prerequisites
 
@@ -37,19 +34,15 @@ To get a local copy up and running, fallow these simple steps:
 
 ### Install
 
-- bundle install
-- npm install
+Run `bundle install`
 
 ### Usage
 
-Execute command
-
-rails server
+Execute command `rails server`
 
 # We need to update the server information 
 
 Then browse http://[::1]:3000/api/v1/greeting
-
 
 ## Authors
 
@@ -61,12 +54,8 @@ Then browse http://[::1]:3000/api/v1/greeting
 
 👤 **Mike Martínez**
 
-- GitHub: [
-@mikemtzp
-](https://github.com/mikemtzp)
-- Twitter: [
-@mikemtzp
-](https://twitter.com/mikemtzp)
+- GitHub: [@mikemtzp](https://github.com/mikemtzp)
+- Twitter: [@mikemtzp](https://twitter.com/mikemtzp)
 - LinkedIn: [Mike Martínez](https://www.linkedin.com/in/mike-mart%C3%ADnez/)
 
 👤 **Alex Masangana**
@@ -86,7 +75,7 @@ Then browse http://[::1]:3000/api/v1/greeting
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/KaskMIL/book-a-jet-backend/issues).
 
 ## Show your support
 
@@ -94,16 +83,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- An special aknowldegment to [Murat Korkmaz](https://www.behance.net/muratk), the design f our project was inspired on his work.
+- An special acknowledgment to [Murat Korkmaz](https://www.behance.net/muratk), [the design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) of our project was inspired on his work.
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
-
-
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is [MIT](https://github.com/KaskMIL/book-a-jet-backend/blob/dev/MIT.md) licensed.
