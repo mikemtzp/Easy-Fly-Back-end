@@ -99,6 +99,8 @@ GEM
       concurrent-ruby (~> 1.0)
       zeitwerk (~> 2.6)
     erubi (1.11.0)
+    faker (2.23.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -220,6 +222,7 @@ DEPENDENCIES
   debug
   devise
   devise-jwt
+  faker
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
@@ -228,7 +231,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.0.2p107
 
 BUNDLED WITH
-   2.3.7
+   2.3.22
