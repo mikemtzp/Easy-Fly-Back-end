@@ -9,7 +9,7 @@ class Api::V1::ReservationsController < ApplicationController
     if @reservation
       render json: @reservation
     else
-      render json: {error: "No reservation found"}
+      render json: { error: 'No reservation found' }
     end
   end
 
@@ -17,9 +17,9 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     if @Reservation
       @reservation.save
-      render json: {message: "Reservation created successfully"}
+      render json: { message: 'Reservation created successfully' }
     else
-      render json: {error: "Unable to create reservation"}
+      render json: { error: 'Unable to create reservation' }
     end
   end
 
@@ -27,9 +27,9 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation = Reservation.find_by(id: params[:id])
     if @reservation
       @reservation.destroy
-      render json: {message: "Reservation deleted successfully"}
+      render json: { message: 'Reservation deleted successfully' }
     else
-      render json: {error: "Unable to delete reservation"}
+      render json: { error: 'Unable to delete reservation' }
     end
   end
 
@@ -37,14 +37,15 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation = Reservation.find_by(id: params[:id])
     if @reservation
       @reservation.update(reservation_params)
-      render json: {message: "Reservation updated successfully"}
+      render json: { message: 'Reservation updated successfully' }
     else
-      render json: {error: "Unable to update reservation"}
+      render json: { error: 'Unable to update reservation' }
     end
   end
 
   private
-    def reservation_params
-      params.require(:reservation).permit(:user_id, :jet_id, :starting_day, :finish_day, :city)
-    end
+
+  def reservation_params
+    params.require(:reservation).permit(:user_id, :jet_id, :starting_day, :finish_day, :city)
+  end
 end
