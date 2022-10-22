@@ -39,8 +39,6 @@ gem 'rack-cors'
 
 gem 'devise'
 
-gem 'devise-jwt'
-
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'bullet'
@@ -54,3 +52,5 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem 'jwt', '~> 2.5'
