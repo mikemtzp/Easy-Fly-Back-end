@@ -1,5 +1,5 @@
-class User < ApplicationRecord 
-    has_many :reservations, dependent: :destroy
+class User < ApplicationRecord
+  has_many :reservations, dependent: :destroy
 
-    validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }
 end
