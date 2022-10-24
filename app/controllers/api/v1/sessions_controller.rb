@@ -3,7 +3,9 @@ class Api::V1::SessionsController < Devise::SessionsController
     @user = User.find_by(username: login_params[:username])
     if @user&.valid_password?(login_params[:password])
       @token = issue_token(@user)
-      render json: { token: @token, username: @user.username, name: @user.name, user_role: @user.role, email: @user.email }, status: :ok
+      render json: { token: @token, username: @user.username,
+                     name: @user.name, user_role: @user.role, email: @user.email },
+             status: :ok
     else
       render json: { error_message: 'Login failed!', details: 'Email or password is invalid' },
              status: :unprocessable_entity
