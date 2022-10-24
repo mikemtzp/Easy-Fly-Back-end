@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
 
-  # You can have the root of your site routed with "root"
+  scope module: 'api', path: "api" do 
+
+  scope :v1 do 
+    devise_for :users, path: '', path_names: {
+      sign_in: "login",
+      sign_out: "logout",
+      registration: "signup"
+      },
+      controllers: {
+        sessions: "api/v1/sessions",
+        registrations: "api/v1/registrations"
+      }
+    end
+  end
+
   root 'homes#index'
   namespace :api do
     namespace :v1 do
@@ -17,7 +31,8 @@ Rails.application.routes.draw do
       patch '/update_jet', to: 'jets#update'
       get '/jets', to: 'jets#index'
       get '/jets/:id', to: 'jets#show'
-
+     #show authorizeduser info
+     get "/authenticated-user", to: "auths#show"
     end
   end
 
