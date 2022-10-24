@@ -2,7 +2,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(sign_up_params)
     if @user.save
-      @token = @user.generate_token
+      @token = issue_token(@user)
       render json: { token: @token, name: @user.name, email: @user.email, id: @user.id, photo: @user.photo },
              status: :ok
     else
