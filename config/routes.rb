@@ -31,7 +31,8 @@ Rails.application.routes.draw do
       patch '/update_jet', to: 'jets#update'
       get '/jets', to: 'jets#index'
       get '/jets/:id', to: 'jets#show'
-
+     #show authorizeduser info
+     get "/authenticated-user", to: "auths#show"
     end
   end
 
