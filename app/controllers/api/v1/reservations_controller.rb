@@ -15,8 +15,8 @@ class Api::V1::ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    if @Reservation
-      @reservation.save
+    @reservation.user = current_user
+    if @Reservation.save
       render json: { message: 'Reservation created successfully' }
     else
       render json: { error: 'Unable to create reservation' }
@@ -25,8 +25,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find_by(id: params[:id])
-    if @reservation
-      @reservation.destroy
+    if @reservation.destroy
       render json: { message: 'Reservation deleted successfully' }
     else
       render json: { error: 'Unable to delete reservation' }
@@ -46,6 +45,6 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:user_id, :jet_id, :starting_day, :finish_day, :city)
+    params.require(:reservation).permit(:jet_id, :starting_day, :finish_day, :city)
   end
 end
