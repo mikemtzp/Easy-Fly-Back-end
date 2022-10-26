@@ -54,3 +54,5 @@ group :development do
 end
 
 gem 'jwt', '~> 2.5'
+
+gem 'cloudinary', '~> 1.23'
