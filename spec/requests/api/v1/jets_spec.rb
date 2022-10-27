@@ -3,9 +3,24 @@ require 'swagger_helper'
 RSpec.describe 'api/v1/jets', type: :request do
 
   path '/api/v1/add-jet' do
-
+    tags 'Jets'
     post('create jet') do
       response(200, 'successful') do
+
+        consumes 'application/json'
+        parameter name: :jet, in: :body, schema: {
+          type: :object,
+          properties: {
+            name: { type: :string },
+            category: { type: :string },
+            description: { type: :string },
+            price_per_day: { type: :integer },
+            finance_fee: { type: :integer },
+            size: { type: :string },
+            image: { type: :string }
+          },
+          required: %w[name category description price_per_day finance_fee size image]
+        }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -22,7 +37,17 @@ RSpec.describe 'api/v1/jets', type: :request do
   path '/api/v1/delete-jet' do
 
     delete('delete jet') do
+      tags 'Jets'
       response(200, 'successful') do
+
+        consumes 'application/json'
+        parameter name: :jet, in: :body, schema: {
+          type: :object,
+          properties: {
+            id: { type: :integer }
+          },
+          required: %w[id]
+        }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -39,8 +64,9 @@ RSpec.describe 'api/v1/jets', type: :request do
   path '/api/v1/update-jet' do
 
     patch('update jet') do
+      tags 'Jets'
       response(200, 'successful') do
-
+        
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -57,7 +83,7 @@ RSpec.describe 'api/v1/jets', type: :request do
 
     get('list jets') do
       response(200, 'successful') do
-
+        tags 'Jets'
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
