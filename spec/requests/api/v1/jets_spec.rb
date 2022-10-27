@@ -3,8 +3,8 @@ require 'swagger_helper'
 RSpec.describe 'api/v1/jets', type: :request do
 
   path '/api/v1/add-jet' do
-    tags 'Jets'
     post('create jet') do
+      tags 'Jets'
       response(200, 'successful') do
 
         consumes 'application/json'
@@ -82,6 +82,7 @@ RSpec.describe 'api/v1/jets', type: :request do
   path '/api/v1/jets' do
 
     get('list jets') do
+      tags 'Jets'
       response(200, 'successful') do
         tags 'Jets'
         after do |example|
@@ -101,6 +102,7 @@ RSpec.describe 'api/v1/jets', type: :request do
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     get('show jet') do
+      tags 'Jets'
       response(200, 'successful') do
         let(:id) { '123' }
 

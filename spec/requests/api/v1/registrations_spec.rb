@@ -4,8 +4,8 @@ RSpec.describe 'api/v1/registrations', type: :request do
 
   path '/api/v1/signup/sign_up' do
 
-    get('new registration') do
-      tags 'Registrations', 'User'
+    post('new registration') do
+      tags 'User'
       response(200, 'successful') do
 
         consumes 'application/json'
