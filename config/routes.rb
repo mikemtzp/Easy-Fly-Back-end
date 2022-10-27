@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
+  
   scope module: 'api', path: "api" do 
 
   scope :v1 do 
