@@ -1,15 +1,12 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/registrations', type: :request do
-
   path '/api/v1/signup/sign_up' do
-
     post('new registration') do
       tags 'User'
       response(200, 'successful') do
-
         consumes 'application/json'
-        
+
         parameter name: :user, in: :body, schema: {
           type: :object,
           properties: {
@@ -19,7 +16,7 @@ RSpec.describe 'api/v1/registrations', type: :request do
             photo: { type: :string }
           },
 
-          required: [ 'email', 'name', 'password', 'photo']
+          required: %w[email name password photo]
         }
 
         after do |example|
@@ -33,5 +30,4 @@ RSpec.describe 'api/v1/registrations', type: :request do
       end
     end
   end
-
 end

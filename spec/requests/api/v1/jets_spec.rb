@@ -1,12 +1,10 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/jets', type: :request do
-
   path '/api/v1/add-jet' do
     post('create jet') do
       tags 'Jets'
       response(200, 'successful') do
-
         consumes 'application/json'
         parameter name: :jet, in: :body, schema: {
           type: :object,
@@ -35,11 +33,9 @@ RSpec.describe 'api/v1/jets', type: :request do
   end
 
   path '/api/v1/delete-jet' do
-
     delete('delete jet') do
       tags 'Jets'
       response(200, 'successful') do
-
         consumes 'application/json'
         parameter name: :jet, in: :body, schema: {
           type: :object,
@@ -62,11 +58,9 @@ RSpec.describe 'api/v1/jets', type: :request do
   end
 
   path '/api/v1/update-jet' do
-
     patch('update jet') do
       tags 'Jets'
       response(200, 'successful') do
-        
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -80,7 +74,6 @@ RSpec.describe 'api/v1/jets', type: :request do
   end
 
   path '/api/v1/jets' do
-
     get('list jets') do
       tags 'Jets'
       response(200, 'successful') do

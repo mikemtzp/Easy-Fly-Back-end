@@ -1,13 +1,10 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/reservations', type: :request do
-
   path '/api/v1/reservations' do
-
     get('list reservations') do
       tags 'Reservations'
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -42,7 +39,6 @@ RSpec.describe 'api/v1/reservations', type: :request do
   end
 
   path '/api/v1/add_reservation' do
-
     post('create reservation') do
       tags 'Reservations'
       response(200, 'successful') do
@@ -56,7 +52,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
             finish_day: { type: :string },
             city: { type: :string }
           },
-          required: [ 'jet_id', 'starting_day', 'finish_day', 'city']
+          required: %w[jet_id starting_day finish_day city]
         }
 
         after do |example|
@@ -72,7 +68,6 @@ RSpec.describe 'api/v1/reservations', type: :request do
   end
 
   path '/api/v1/del_reservation' do
-
     delete('delete reservation') do
       tags 'Reservations'
       response(200, 'successful') do
@@ -83,7 +78,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
           properties: {
             id: { type: :integer }
           },
-          required: [ 'id']
+          required: ['id']
         }
 
         after do |example|

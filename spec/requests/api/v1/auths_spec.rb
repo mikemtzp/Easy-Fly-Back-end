@@ -1,13 +1,10 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/auths', type: :request do
-
   path '/api/v1/authenticated-user' do
-
     get('show authenficated user') do
       tags 'User'
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
