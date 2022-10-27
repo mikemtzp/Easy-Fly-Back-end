@@ -16,8 +16,9 @@ class Api::V1::ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
-    if @Reservation.save
-      render json: { message: 'Reservation created successfully' }
+    # render json: { message: @reservation }
+    if @reservation.save
+      render json: { message: 'Reservation created successfully', reservation: @reservation }
     else
       render json: { error: 'Unable to create reservation' }
     end
