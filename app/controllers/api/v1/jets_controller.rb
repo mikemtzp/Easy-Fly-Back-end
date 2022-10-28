@@ -26,7 +26,7 @@ class Api::V1::JetsController < ApplicationController
                   finance_fee: params[:financeFee],
                   size: params[:size], image: image['url'])
     if jet.save
-      render json: { jet: jet, message: 'Jet created successfully' }, status: :ok
+      render json: { jet:, message: 'Jet created successfully' }, status: :ok
     else
       render json: { error: 'Unable to create jet' }, status: :unprocessable_entity
     end
