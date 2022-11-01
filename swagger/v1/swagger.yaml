@@ -1,0 +1,226 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/authenticated-user":
+    get:
+      summary: show authenficated user
+      tags:
+      - User
+      responses:
+        '200':
+          description: successful
+  "/api/v1/add-jet":
+    post:
+      summary: create jet
+      tags:
+      - Jets
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                category:
+                  type: string
+                description:
+                  type: string
+                price_per_day:
+                  type: integer
+                finance_fee:
+                  type: integer
+                size:
+                  type: string
+                image:
+                  type: string
+              required:
+              - name
+              - category
+              - description
+              - price_per_day
+              - finance_fee
+              - size
+              - image
+  "/api/v1/delete-jet":
+    delete:
+      summary: delete jet
+      tags:
+      - Jets
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+              required:
+              - id
+  "/api/v1/update-jet":
+    patch:
+      summary: update jet
+      tags:
+      - Jets
+      responses:
+        '200':
+          description: successful
+  "/api/v1/jets":
+    get:
+      summary: list jets
+      tags:
+      - Jets
+      responses:
+        '200':
+          description: successful
+  "/api/v1/jets/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show jet
+      tags:
+      - Jets
+      responses:
+        '200':
+          description: successful
+  "/api/v1/signup/sign_up":
+    post:
+      summary: new registration
+      tags:
+      - User
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                name:
+                  type: string
+                password:
+                  type: string
+                photo:
+                  type: string
+              required:
+              - email
+              - name
+              - password
+              - photo
+  "/api/v1/reservations":
+    get:
+      summary: list reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/reservations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/add_reservation":
+    post:
+      summary: create reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                jet_id:
+                  type: integer
+                starting_day:
+                  type: string
+                finish_day:
+                  type: string
+                city:
+                  type: string
+              required:
+              - jet_id
+              - starting_day
+              - finish_day
+              - city
+  "/api/v1/del_reservation":
+    delete:
+      summary: delete reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+              required:
+              - id
+  "/api/v1/login":
+    post:
+      summary: create session
+      tags:
+      - User
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
