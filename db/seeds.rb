@@ -11,19 +11,10 @@ require 'faker'
 
 p "Seed started"
 
-p "Creating users"
-require File.expand_path('db/seeds/seeds_users', Rails.root)
-
 p "Creating jets"
 require File.expand_path('db/seeds/seeds_jets', Rails.root)
 
-p "Creating reservations"
-require File.expand_path('db/seeds/seeds_reservations', Rails.root)
-
-
 p "---------------------"
 
-p "Created #{User.count} users"
 p "Created #{Jet.count} jets"
-p "Created #{Reservation.count} reservations"
 p "Seed finished"
