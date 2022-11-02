@@ -39,7 +39,11 @@ Run `bundle install`
 
 ### Usage
 
-Execute command `rails server`
+Execute the following commands:
+- rails db:create
+- rails db:migrate
+- rails db:seed
+- rails s
 
 ## Authors
 
