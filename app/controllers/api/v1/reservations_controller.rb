@@ -1,10 +1,10 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = current_user.reservations.includes(:user, :jet).as_json(
-      only: %i[starting_day finish_day city],
+      only: %i[starting_day finish_day city id jet_id],
       include: {
         jet: {
-          only: %i[name description size category image price_per_day finance_fee]
+          only: %i[name description size category image price_per_day finance_fee id]
         },
         user: {
           only: %i[id name username]
