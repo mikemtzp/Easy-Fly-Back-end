@@ -22,6 +22,10 @@ class ApplicationController < ActionController::API
     render json: { error: 'Verification of token failed!' }, status: :unauthorized
   end
 
+  def authenticate_user!(_ = {})
+    render json: { error: 'Must be logged in' }, status: :unauthorized unless logged_in?
+  end
+
   def current_user
     @current_user ||= User.find_by(id: decoded_token['id'])
   end
