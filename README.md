@@ -13,8 +13,6 @@
 - [Book-a-Jet-Front-End](https://github.com/KaskMIL/book-a-jet-front-end)
 - Live Demo: [EasyFly](https://6362dd43988f2d00a9c59c3e--timely-sprinkles-616361.netlify.app/)
 
-## Live Demo (coming soon...)
-
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps:
