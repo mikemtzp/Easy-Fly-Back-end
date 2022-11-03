@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+p "Seed started"
+
+p "Creating jets"
+require File.expand_path('db/seeds/seeds_jets', Rails.root)
+
+p "---------------------"
+
+p "Created #{Jet.count} jets"
+p "Seed finished"
