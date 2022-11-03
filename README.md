@@ -2,7 +2,7 @@
 
 # Book a Jet Back-End
 
-> In the Book a Jet app you can reserve a jet in a specific range of date, see the details from a jet model, see or cancelyour reservations, and add or delete a new jet to be available for reservation. This repo manages all the necessary to run the API needed for the project [Book-a-Jet-Front-End](https://github.com/KaskMIL/book-a-jet-front-end).
+> In the Book a Jet app you can reserve a jet in a specific range of date, see the details from a jet model, see or cancel your reservations, and add or delete a new jet to be available for reservation. This repo manages all the necessary to run the API needed for the project [Book-a-Jet-Front-End](https://github.com/KaskMIL/book-a-jet-front-end).
 
 ## Built With
 
