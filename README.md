@@ -4,7 +4,7 @@
 
 > In the Book a Jet app you can reserve a jet in a specific range of date, see the details from a jet model, see or cancel your reservations, and add or delete a new jet to be available for reservation. This repo manages all the necessary to run the API needed for the project [Book-a-Jet-Front-End](https://github.com/mikemtzp/Easy-Fly).
 
-## [API Documentation](https://easy-fly-backend.onrender.com/)
+## [API Documentation](https://easyflyback.onrender.com)
 
 ## Built With
 
